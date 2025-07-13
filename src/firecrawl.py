@@ -38,5 +38,17 @@ class FirecrawlService:
            except Exception as e:
                 print(f"Error during scraping: {e}")
                 return None
+           
+
+    def scrape_company_pages(self, url: str):
+        try:
+            result = self.app.scrape_url(
+                url,
+                formats=["markdown"]
+            )
+            return result
+        except Exception as e:
+            print(e)
+            return None
 
       
